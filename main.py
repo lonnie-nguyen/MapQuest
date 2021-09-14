@@ -9,13 +9,10 @@ import maps
 import gui
 
 '''
-Gets user input of location number. User inputs the locations.
+CLI Gets user input of location number. User inputs the locations.
 Locations are appended to a list.
 '''
-def inputlocations():
-    # #gui code implementation testing
-    # gui.inputlocation_intgui()
-    # gui.inputlocation_addressgui()
+def inputlocations():   
     
     #CLI code
     while True:
@@ -44,7 +41,17 @@ def inputlocations():
     return loclist
 
 '''
-Gets user input of output number. User inputs the outputs that they want.
+GUI add to list
+'''
+def gui_inputlist(values, inputlist):
+    list1 = inputlist
+        
+    list1.append(values)
+            
+    return list1
+
+'''
+CLI Gets user input of output number. User inputs the outputs that they want.
 Outputs are appended to a list.
 '''
 def outputrequest():
@@ -114,11 +121,13 @@ def outputinfo(output_list, json_file):
     print('Directions Courtesy of MapQuest; Map Data Copyright OpenStreetMap Contributors.')
     
 def main():
-    locations_list = inputlocations()
-    json = maps.directurl(locations_list)
-    output_list = outputrequest()
+    # locations_list = inputlocations()
+    # json = maps.directurl(locations_list)
+    # output_list = outputrequest()
+    #
+    # outputinfo(output_list, json)
     
-    outputinfo(output_list, json)
+    gui.mainwindow()
     
 if __name__ == "__main__":
     main()
